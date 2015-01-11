@@ -4,11 +4,19 @@ from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 class Contact(models.Model):
 
-	f_name 		= models.CharField(_('First Name'),max_length=256)
-	s_name		= models.CharField(_('Last Name'),max_length=256,blank=True)
-	prefix		= models.CharField(_('Prefix'),max_length=64,blank=True)
-
+	name 		= models.CharField(_('Name'),max_length=512)
 	is_company	= models.BooleanField(_('Company'),default=False)
+	image		= models.ImageField(_('Image'),blank=True)
 
 	def __str__(self):
-		return '%s %s,%s'%(self.f_name,self.s_name,self.prefix)
+		return '%s[%s]'%(self.name,self.is_company)
+
+class Addition(models.Model):
+	contact 	= models.ForeignKey(Contact)
+
+class Tel(Addition):
+	tel_type 	= models.CharField(_('Tel Type'),max_length=128)
+	number		= models.CharField(_('Number'),max_length=128)
+
+	def __str__(self):
+		return '[%s]%s'%(self.tel_type,self.number)		

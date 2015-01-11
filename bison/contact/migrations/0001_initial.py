@@ -13,11 +13,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Contact',
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, auto_created=True, verbose_name='ID')),
-                ('f_name', models.CharField(max_length=256)),
-                ('s_name', models.CharField(blank=True, max_length=256)),
-                ('prefix', models.CharField(blank=True, max_length=64)),
-                ('is_company', models.BooleanField(default=False)),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
+                ('name', models.CharField(max_length=512, verbose_name='First Name')),
+                ('prefix', models.CharField(max_length=64, verbose_name='Prefix', blank=True)),
+                ('is_company', models.BooleanField(verbose_name='Company', default=False)),
             ],
             options={
             },

@@ -1,0 +1,10 @@
+{% extends "contact/base.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+	<h1>New Contact</h1>
+	<form class="contact-form" action="#">
+		<table class="table">
+			{{contactForm.as_table}}
+		</table>
+	</form>
+{% endblock %}

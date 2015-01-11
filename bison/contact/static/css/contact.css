@@ -1,0 +1,13 @@
+.contact-form > p > label{
+	text-transform: uppercase;
+	font-weight:400;
+}
+.contact-form > p > input{
+	outline:none;
+	display: inline-block;
+	border:solid 2px #000;
+	font-size: 1.3em;
+}
+.contact-form > input[type=file]{
+	border:none;
+}
