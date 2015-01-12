@@ -1,10 +1,17 @@
 {% extends "contact/base.html" %}
-{% block title %}Contact{% endblock %}
-{% block content %}
-	<h1>New Contact</h1>
-	<form class="contact-form" action="#">
-		<table class="table">
-			{{contactForm.as_table}}
-		</table>
-	</form>
+{%block title %}Contact{% endblock %}
+{%block content %}
+<md-content class="md-padding">
+	<h1>Contact</h1>
+	<md-card>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<span>Create</span>
+			</div>
+		</md-toolbar>
+		<form>
+			<md-text-float layout-fill label="{{user.lastName}}" type="tel" ng-model="user.lastName"> </md-text-float>
+		</form>
+	</md-card>
+</md-content>
 {% endblock %}
